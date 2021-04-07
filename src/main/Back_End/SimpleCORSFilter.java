@@ -22,7 +22,7 @@ public class SimpleCORSFilter implements Filter {
         log.info("SimpleCORSFilter init");
     }
     
-    //CORS filter method to override permissions to access the backend and its methods.
+    //CORS filter to override permissions to access the backend and its methods.
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         /*
