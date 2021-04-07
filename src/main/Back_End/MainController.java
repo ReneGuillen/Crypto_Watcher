@@ -20,24 +20,6 @@ public class MainController {
     private JdbcTemplate jdbcTemplate;
     private String username;
 
-    @GetMapping("/getUser")
-    public @ResponseBody String getUser(Principal principal) {
-        int count = 2;
-        int index = 0;
-        String details = principal.toString();
-        StringBuilder username = new StringBuilder();
-        while(count > 0){
-            if(details.charAt(index++) == '=')
-                count--;
-        }
-        for(int i = 0; i < details.length(); i++){
-            if(details.charAt(index) == ',')
-                break;
-            username.append(details.charAt(index++));
-        }
-        return username.toString();
-    }
-
     //Show stocks from the user's favorite list on db.
     @RequestMapping(path = "/showStocks")
     public @ResponseBody List<String> showStocks(Principal principal){
