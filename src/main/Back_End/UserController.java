@@ -17,17 +17,28 @@ public class UserController {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
-    //Search method to get username from github response after login.
+    
+    @GetMapping("/getUser")
     public String getUser(Principal principal) {
+        /*
+        Search Method to get username from github response after login to
+        later add the user to database table utilizing O(N)Time / O(N)Space.
+        Returns:
+            user's username as a string.
+        */
+        
+        //Search for username on principal's response
         int count = 2;
         int index = 0;
         String details = principal.toString();
         StringBuilder username = new StringBuilder();
+        
+        //get username's index in string.
         while(count > 0){
             if(details.charAt(index++) == '=')
                 count--;
         }
+        //append chars to the stringbuilder to get full username.
         for(int i = 0; i < details.length(); i++){
             if(details.charAt(index) == ',')
                 break;
@@ -36,9 +47,14 @@ public class UserController {
         return username.toString();
     }
 
-    //Add user to the db table after getting user's info from github.
-    @GetMapping("/addUser")
+    @PostMapping("/addUser")
     public @ResponseBody String addUser(Principal principal){
+        /*
+        Method adds user to the db table after getting user's info from github.
+        Username is look up on the table if it exists returns coins if not, new user
+        gets created with username.
+        */
+        
         String username = getUser(principal);
         if(!checkIfExists(username)){
             //Create user based on github username on table.
@@ -52,8 +68,8 @@ public class UserController {
         return "User " + username + " already exists, WELCOME BACK!!";
     }
 
-    //Check if user already exists on db table based on response/error.
-    public boolean checkIfExists(String username){
+    //Check if user already exists on databseb table based on response/error.
+    private boolean checkIfExists(String username){
         try {
             String sql = "SELECT " + username +" FROM heroku_4c689183642aecd.coins;";
             List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
