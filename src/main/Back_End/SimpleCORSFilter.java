@@ -21,10 +21,14 @@ public class SimpleCORSFilter implements Filter {
     public SimpleCORSFilter() {
         log.info("SimpleCORSFilter init");
     }
-
+    
+    //CORS filter method to override permissions to access the backend and its methods.
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-
+        /*
+        Allows Post, Get, Put, Delete methods to be send over http as well as 
+        allowing the front end to talk to the back end.
+        */
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 
