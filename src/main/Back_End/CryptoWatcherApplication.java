@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class CryptoWatcherApplication {
 	
-	//Start point of the application (Main Class).
+	//Starting point of the application.
 	public static void main(String[] args) {
 		SpringApplication.run(CryptoWatcherApplication.class, args);
 	}
