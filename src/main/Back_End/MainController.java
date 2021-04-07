@@ -19,7 +19,7 @@ public class MainController {
     private JdbcTemplate jdbcTemplate;
     private String username;
     
-    @RequestMapping(path = "/showCoins")
+    @GetMapping(path = "/showCoins")
     public @ResponseBody List<String> showCoins(Principal principal){
         /* 
         Method retrieves coins from the user's favorite list on database
@@ -46,7 +46,7 @@ public class MainController {
     }
 
     //
-    @RequestMapping(path = "/addCoin")
+    @PutMapping(path = "/addCoin")
     public @ResponseBody void addCoin(@RequestParam String coin){
         /* 
         Method adds a new coin to the user's favorite list on database.
@@ -60,7 +60,7 @@ public class MainController {
         updateCount(count - 2, 1, username);
     }
 
-    @RequestMapping(path = "/deleteCoin")
+    @DeleteMapping(path = "/deleteCoin")
     public @ResponseBody void deleteCoin(@RequestParam String coin){
         /*
         Method deletes the given coin from the user's favorite list on dabase.
