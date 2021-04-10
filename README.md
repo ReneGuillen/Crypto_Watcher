@@ -1,8 +1,7 @@
 # Stock Watcher
 Full Stack Website to track stock prices and data using React as front end &amp; Springboot as the back end. Login with GitHub and Database functionally.
 
-### Files
-
+## Directories
 * Back_end = Java SpringBoot
 * Front_end = JavaScript React
 
