@@ -1,5 +1,5 @@
 # Stock Watcher
-Full Stack Website to track stock prices and data using React as front end &amp; Springboot as the back end. Login with GitHub and Database functionally.
+Full Stack Website to track Crypto-Currency prices and data using React as front end &amp; Springboot as the back end. Login with GitHub and Database functionally.
 
 ![image](https://user-images.githubusercontent.com/62676755/114276099-d03d3000-99ea-11eb-86ee-f8f2178148a6.png)
 
