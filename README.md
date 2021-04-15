@@ -8,7 +8,6 @@ Full Stack Website to track Crypto-Currency prices and data using React as front
 * Full Stack Website with SpringBoot back_end & React front_end.
 * Utilized React-Axios to pull Crypto-currency data from Gecko API.
 * REST API for http requests and User Controller using SpringBoot.
-* hello
 * DataBase funcionality with MySQL to save favority curriencies for each user.
 
 ## 2. Directory
