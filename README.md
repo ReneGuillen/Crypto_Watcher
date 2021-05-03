@@ -16,4 +16,3 @@ Full Stack Website to track Crypto-Currency prices and data using React as front
 
 ## 3. Demo:
 * https://cryptocurrency-watcher.herokuapp.com/
-6
